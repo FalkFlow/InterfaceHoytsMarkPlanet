@@ -44,6 +44,8 @@ public class HoytsMarkPlanet extends javax.swing.JFrame {
         removeMovies = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         contains = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        exitButton = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HMPAPP");
@@ -151,11 +153,11 @@ public class HoytsMarkPlanet extends javax.swing.JFrame {
         barSideLayout.setVerticalGroup(
             barSideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barSideLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         contains.setBackground(new java.awt.Color(153, 153, 153));
@@ -186,9 +188,24 @@ public class HoytsMarkPlanet extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(barSide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(contains, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(barSide, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+            .addComponent(contains, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
         );
+
+        exitButton.setText("Salir");
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitButtonMouseClicked(evt);
+            }
+        });
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(exitButton);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -261,6 +278,14 @@ public class HoytsMarkPlanet extends javax.swing.JFrame {
         contains.repaint();
     }//GEN-LAST:event_removeMoviesActionPerformed
 
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+
+    }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -300,8 +325,10 @@ public class HoytsMarkPlanet extends javax.swing.JFrame {
     private javax.swing.JButton addMovie;
     private javax.swing.JPanel barSide;
     private javax.swing.JPanel contains;
+    private javax.swing.JMenu exitButton;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton listsMovies;
     private javax.swing.JButton modMovies;
