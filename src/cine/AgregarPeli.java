@@ -3,11 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package cine;
-
+ 
 /**
  *
  * @author martin
  */
+
+import conexion.Conexion;
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 public class AgregarPeli extends javax.swing.JPanel {
 
     /**
@@ -182,7 +187,31 @@ public class AgregarPeli extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendActionPerformed
-        // TODO add your handling code here:
+        String id = idText.getText();
+        String title = titleText.getText();
+        String anno = annoText.getText();
+        String director = directorText.getText();
+        String gen = genText.getText();
+        try {
+            Connection con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement("INSERT INTO peliculas (id, titulo, annio, director, genero) VALUES (?, ?, ?, ?, ?)");
+            ps.setString(1, id);
+            ps.setString(2, title);
+            ps.setString(3, anno);
+            ps.setString(4, director);
+            ps.setString(5, gen);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Película agregada correctamente");
+            idText.setText("");
+            titleText.setText("");
+            annoText.setText("");
+            directorText.setText("");
+            genText.setText("");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        }
     }//GEN-LAST:event_SendActionPerformed
 
     private void cleanFieldsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanFieldsActionPerformed
