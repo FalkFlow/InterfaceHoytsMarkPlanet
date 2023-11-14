@@ -308,18 +308,17 @@ public class HoytsMarkPlanet extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(HoytsMarkPlanet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(HoytsMarkPlanet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HoytsMarkPlanet.class.getName()).log(java.uAddMovieing.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HoytsMarkPlanet().setVisible(true);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(HoytsMarkPlanet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
-        });
-    }
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new HoytsMarkPlanet().setVisible(true);
+                }
+            });
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMovie;
