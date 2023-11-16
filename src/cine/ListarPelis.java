@@ -4,6 +4,15 @@
  */
 package cine;
 
+import conexion.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author martin
@@ -15,6 +24,7 @@ public class ListarPelis extends javax.swing.JPanel {
      */
     public ListarPelis() {
         initComponents();
+        cargarTabla();
     }
 
     /**
@@ -39,15 +49,25 @@ public class ListarPelis extends javax.swing.JPanel {
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Titulo", "Año", "Director", "Genero"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -74,6 +94,66 @@ public class ListarPelis extends javax.swing.JPanel {
                 .addGap(219, 219, 219))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
+        try {
+            int fila = jTable1.getSelectedRow();
+            int id = Integer.parseInt(jTable1.getValueAt(fila, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            Connection con = Conexion.getConexion();
+            ps = con.prepareStatement("SELECT id, titulo, annio, director, genero FROM peliculas WHERE id = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                // Recupera los detalles de la base de datos
+                int movieId = rs.getInt("id");
+                String titulo = rs.getString("titulo");
+                int annio = rs.getInt("annio");
+                String director = rs.getString("director");
+                String genero = rs.getString("genero");
+    
+                // Muestra los detalles en un JOptionPane
+                String mensaje = "ID: " + movieId + "\nTítulo: " + titulo + "\nAño: " + annio + "\nDirector: " + director + "\nGénero: " + genero;
+                JOptionPane.showMessageDialog(this, mensaje, "Detalles de la Película", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al obtener detalles de la película: " + e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+private void cargarTabla() {
+    DefaultTableModel modeloTabla = (DefaultTableModel) jTable1.getModel(); // Reemplaza 'tblAlumnos' con el nombre correcto de tu JTable
+    modeloTabla.setRowCount(0);
+    PreparedStatement ps;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
+    int columnas;
+    int[] anchos = {30, 50, 100, 30, 100}; // Ajusta los anchos de las columnas según tus necesidades
+
+    // Ajusta el ancho de cada columna en la JTable
+    for (int i = 0; i < jTable1.getColumnCount(); i++) {
+        jTable1.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+    }
+
+    try {
+        Connection con = Conexion.getConexion();
+        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero FROM peliculas");
+        rs = ps.executeQuery();
+        rsmd = rs.getMetaData();
+        columnas = rsmd.getColumnCount();
+
+        while (rs.next()) {
+            Object[] fila = new Object[columnas];
+            for (int indice = 0; indice < columnas; indice++) {
+                fila[indice] = rs.getObject(indice + 1);
+            }
+            modeloTabla.addRow(fila);
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al cargar la tabla: " + e.toString());
+    }
+}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
