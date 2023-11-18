@@ -145,7 +145,7 @@ public class RemovePeli extends javax.swing.JPanel {
 
     try {
         Connection con = Conexion.getConexion();
-        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero FROM peliculas");
+        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero FROM peliculas ORDER BY id ASC");
         rs = ps.executeQuery();
         rsmd = rs.getMetaData();
         columnas = rsmd.getColumnCount();
