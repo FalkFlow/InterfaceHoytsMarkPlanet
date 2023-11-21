@@ -52,15 +52,20 @@ public class RemovePeli extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Titulo", "Año", "Director", "Genero"
+                "ID", "Titulo", "Año", "Director", "Genero", "Duracion"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -145,7 +150,7 @@ public class RemovePeli extends javax.swing.JPanel {
 
     try {
         Connection con = Conexion.getConexion();
-        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero FROM peliculas ORDER BY id ASC");
+        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero, duracion  FROM peliculas ORDER BY id ASC");
         rs = ps.executeQuery();
         rsmd = rs.getMetaData();
         columnas = rsmd.getColumnCount();

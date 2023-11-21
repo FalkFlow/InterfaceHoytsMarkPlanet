@@ -72,11 +72,11 @@ public class ListarPelis extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Titulo", "Año", "Director", "Genero"
+                "ID", "Titulo", "Año", "Director", "Genero", "Duracion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -210,7 +210,7 @@ public class ListarPelis extends javax.swing.JPanel {
             PreparedStatement ps;
             ResultSet rs;
             Connection con = Conexion.getConexion();
-            ps = con.prepareStatement("SELECT id, titulo, annio, director, genero FROM peliculas WHERE id = ?");
+            ps = con.prepareStatement("SELECT id, titulo, annio, director, genero, duracion FROM peliculas WHERE id = ?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -220,9 +220,10 @@ public class ListarPelis extends javax.swing.JPanel {
                 int annio = rs.getInt("annio");
                 String director = rs.getString("director");
                 String genero = rs.getString("genero");
+                String duracion = rs.getString("duracion");
     
                 // Muestra los detalles en un JOptionPane
-                String mensaje = "ID: " + movieId + "\nTítulo: " + titulo + "\nAño: " + annio + "\nDirector: " + director + "\nGénero: " + genero;
+                String mensaje = "ID: " + movieId + "\nTítulo: " + titulo + "\nAño: " + annio + "\nDirector: " + director + "\nGénero: " + genero+ "\nDuracion" + duracion;
                 JOptionPane.showMessageDialog(this, mensaje, "Detalles de la Película", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
@@ -246,7 +247,7 @@ private DefaultTableModel cargarTabla() {
 
     try {
         Connection con = Conexion.getConexion();
-        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero FROM peliculas ORDER BY id ASC");
+        ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero, duracion FROM peliculas ORDER BY id ASC");
         rs = ps.executeQuery();
         rsmd = rs.getMetaData();
         columnas = rsmd.getColumnCount();
