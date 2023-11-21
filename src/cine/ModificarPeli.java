@@ -51,6 +51,8 @@ public class ModificarPeli extends javax.swing.JPanel {
                 jTextField2 = new javax.swing.JTextField();
                 jTextField3 = new javax.swing.JTextField();
                 jTextField4 = new javax.swing.JTextField();
+                jLabel2 = new javax.swing.JLabel();
+                jTextField5 = new javax.swing.JTextField();
 
                 setBackground(new java.awt.Color(51, 153, 255));
                 setPreferredSize(new java.awt.Dimension(666, 750));
@@ -78,11 +80,11 @@ public class ModificarPeli extends javax.swing.JPanel {
 
                         },
                         new String [] {
-                                "ID", "Titulo", "Año", "Director", "Genero"
+                                "ID", "Titulo", "Año", "Director", "Genero", "Duracion"
                         }
                 ) {
                         boolean[] canEdit = new boolean [] {
-                                false, false, false, false, false
+                                false, false, false, false, false, true
                         };
 
                         public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -114,9 +116,26 @@ public class ModificarPeli extends javax.swing.JPanel {
                 genLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
                 genLabel.setText("Genero:");
 
+                jTextField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
                 jTextField1.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 jTextField1ActionPerformed(evt);
+                        }
+                });
+
+                jTextField2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+
+                jTextField3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+
+                jTextField4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+
+                jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+                jLabel2.setText("Duracion:");
+
+                jTextField5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+                jTextField5.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jTextField5ActionPerformed(evt);
                         }
                 });
 
@@ -124,19 +143,25 @@ public class ModificarPeli extends javax.swing.JPanel {
                 jPanel1.setLayout(jPanel1Layout);
                 jPanel1Layout.setHorizontalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(annoLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                                        .addComponent(directorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(genLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel2))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(annoLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                                                        .addComponent(directorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                                                        .addComponent(genLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addGap(165, 165, 165)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jTextField1)
                                         .addComponent(jTextField2)
                                         .addComponent(jTextField3)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                        .addComponent(jTextField5))
                                 .addGap(34, 34, 34))
                 );
                 jPanel1Layout.setVerticalGroup(
@@ -159,7 +184,11 @@ public class ModificarPeli extends javax.swing.JPanel {
                                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(39, 39, 39)
                                                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 71, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 38, Short.MAX_VALUE))
                 );
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -187,7 +216,7 @@ public class ModificarPeli extends javax.swing.JPanel {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                                 .addComponent(AceptarCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31))
                 );
@@ -200,7 +229,7 @@ public class ModificarPeli extends javax.swing.JPanel {
             PreparedStatement ps;
             ResultSet rs;
             Connection con = Conexion.getConexion();
-            ps = con.prepareStatement("SELECT titulo, annio, director, genero FROM peliculas WHERE id=?");
+            ps = con.prepareStatement("SELECT titulo, annio, director, genero, duracion FROM peliculas WHERE id=?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -208,6 +237,7 @@ public class ModificarPeli extends javax.swing.JPanel {
                 jTextField2.setText(rs.getString("annio"));
                 jTextField3.setText(rs.getString("director"));
                 jTextField4.setText(rs.getString("genero"));
+                jTextField5.setText(rs.getString("duracion"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
@@ -227,12 +257,13 @@ public class ModificarPeli extends javax.swing.JPanel {
             PreparedStatement ps;
             ResultSet rs;
             Connection con = Conexion.getConexion();
-            ps = con.prepareStatement("UPDATE peliculas SET titulo=?, annio=?, director=?, genero=? WHERE id=?");
+            ps = con.prepareStatement("UPDATE peliculas SET titulo=?, annio=?, director=?, genero=?, duracion=? WHERE id=?");
             ps.setString(1, jTextField1.getText());
             ps.setString(2, jTextField2.getText());
             ps.setString(3, jTextField3.getText());
             ps.setString(4, jTextField4.getText());
-            ps.setInt(5, id);
+            ps.setString(5, jTextField5.getText());
+            ps.setInt(6, id);
             ps.execute();
             JOptionPane.showMessageDialog(null, "Pelicula modificada");
             cargarTabla();
@@ -244,6 +275,10 @@ public class ModificarPeli extends javax.swing.JPanel {
         private void AceptarCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarCambioActionPerformed
                 // TODO add your handling code here:
         }//GEN-LAST:event_AceptarCambioActionPerformed
+
+        private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void cargarTabla() {
         DefaultTableModel modeloTabla = (DefaultTableModel) jTable1.getModel(); // Reemplaza 'tblAlumnos' con el nombre correcto de tu JTable
@@ -261,7 +296,7 @@ public class ModificarPeli extends javax.swing.JPanel {
     
         try {
             Connection con = Conexion.getConexion();
-            ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero FROM peliculas ORDER BY id ASC");
+            ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero, duracion FROM peliculas ORDER BY id ASC");
             rs = ps.executeQuery();
             rsmd = rs.getMetaData();
             columnas = rsmd.getColumnCount();
@@ -285,6 +320,7 @@ public class ModificarPeli extends javax.swing.JPanel {
         private javax.swing.JLabel directorLabel;
         private javax.swing.JLabel genLabel;
         private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel2;
         private javax.swing.JPanel jPanel1;
         private javax.swing.JScrollPane jScrollPane2;
         private javax.swing.JTable jTable1;
@@ -292,6 +328,7 @@ public class ModificarPeli extends javax.swing.JPanel {
         private javax.swing.JTextField jTextField2;
         private javax.swing.JTextField jTextField3;
         private javax.swing.JTextField jTextField4;
+        private javax.swing.JTextField jTextField5;
         private javax.swing.JLabel titleLabel;
         // End of variables declaration//GEN-END:variables
 }

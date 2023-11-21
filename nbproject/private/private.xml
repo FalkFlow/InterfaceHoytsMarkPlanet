@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/genero/ListadoGenero.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/genero/Genero.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/cine/HoytsMarkPlanet.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/cine/ModificarPeli.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/conexion/Conexion.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/cine/RemovePeli.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/cine/AgregarPeli.java</file>
-            <file>file:/C:/Users/marti/Documents/GitHub/Apuntes%20Java%20Jupyter/InterfaceHoytsMarkPlanet/src/cine/ListarPelis.java</file>
+            <file>file:/C:/Users/marti/Desktop/GitHub/InterfaceHoytsMarkPlanet/src/cine/AgregarPeli.java</file>
+            <file>file:/C:/Users/marti/Desktop/GitHub/InterfaceHoytsMarkPlanet/src/cine/ListarPelis.java</file>
+            <file>file:/C:/Users/marti/Desktop/GitHub/InterfaceHoytsMarkPlanet/src/cine/ModificarPeli.java</file>
+            <file>file:/C:/Users/marti/Desktop/GitHub/InterfaceHoytsMarkPlanet/src/cine/RemovePeli.java</file>
         </group>
     </open-files>
 </project-private>
