@@ -1,0 +1,36 @@
+drop table peliculas;
+
+create table peliculas(
+	id int not null,
+	titulo varchar2(30) not null,
+	annio int not null,
+	director varchar2(30),
+	genero varchar(30) not null,
+	duracion int
+);
+
+alter table peliculas
+	add constraint id_pk Primary Key (id);
+
+create user test_connetion identified by "test_123",
+gran connect to test_connetion;
+grant create session to test_connetion;
+grant create sequence to test_connetion;
+grant create trigger to test_connetion;
+
+
+alter user "TEST_CONNETION" quota unlimited on "SYSTEM";
+later user "TEST_CONNETION" quota unlimited on "USERS";
+
+create sequence id_inc
+start with 1
+increment by 1;
+
+create trigger trig_id_inc
+before insert on peliculas
+for each row
+begin
+select id_inc.NEXTVAL INTO :NEW.id FROM DUAL;
+END;
+
+--con este triger podemos incluso borrar el id en el agregar pelicula 
