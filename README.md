@@ -3,8 +3,9 @@
 ## Preparacion
 
 Se realizo la conexión de base de datos en el sistema de oracle, expresamente el Oracle Database 21c Express edition, luego de la instalación de estas nos conectamos con el usuario ´SYSTEM´
-al entrar en lahoja de trabajo deberemos escribir lo siguiente:
-´´´ SQL
+al entrar en lahoja de trabajo deberemos escribir lo 
+siguiente:
+```SQL
   ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
   CREATE USER test_connetion IDENTIFIED BY "test_123";
@@ -15,9 +16,10 @@ al entrar en lahoja de trabajo deberemos escribir lo siguiente:
 
   ALTER USER "TEST_CONNETION" QUOTA UNLIMITED ON "SYSTEM";
   ALTER USER "TEST_CONNTION" QUOTA UNLMTED ON "USERS";
-´´´
+```
+
 esto es para crear un usuario, luego de crear el usuario e ingresar a este creamos la tabla, en este caso ocuparemos la mala practica de escribir el nombre de la tabla en plural.
-´´´SQL
+```SQL
   CREATE TABLE peliculas(
   ID INT NOT NULL,
   titulo VARCHAR2(60) NOT NULL,
@@ -29,10 +31,10 @@ esto es para crear un usuario, luego de crear el usuario e ingresar a este cream
 
   ALTER TABLE peliculas
     ADD CONSTRAINT id_pk PRIMARY KEY (id);
-´´´
+```
 
 con esto crearemos la tabla peliculas con id como primary key por lo cual ningun id puede ser vacia y tambien tiene que ser unica, entonces ahora haremos lo siguiente en oracle
-´´´SQL
+```SQL
   CREATE SEQUENCE id_inc
   START WITH 1
   INCREMENT BY 1;
@@ -43,7 +45,7 @@ con esto crearemos la tabla peliculas con id como primary key por lo cual ningun
   BEGIN
     SELECT id_inc.NEXTVAL INTO :NEW.ID FROM DUAL;
   END;
-´´´
+```
 con esto tendremos id automatico al momento de ingresar peliculas.
 
 ## APACHE
