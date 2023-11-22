@@ -252,7 +252,7 @@ public class ListarPelis extends javax.swing.JPanel {
                 ResultSet rs;
                 ResultSetMetaData rsmd;
                 int columnas;
-                int[] anchos = {30, 50, 100, 30, 100}; // Ajusta los anchos de las columnas según tus necesidades
+                int[] anchos = {30, 50, 100, 30, 100, 100}; // Ajusta los anchos de las columnas según tus necesidades
 
                 // Ajusta el ancho de cada columna en la JTable
                 for (int i = 0; i < jTable1.getColumnCount(); i++) {
@@ -324,7 +324,7 @@ public class ListarPelis extends javax.swing.JPanel {
                 ResultSet rs;
                 ResultSetMetaData rsmd;
                 int columnas;
-                int[] anchos = {30, 50, 100, 30, 100}; // Ajusta los anchos de las columnas según tus necesidades
+                int[] anchos = {30, 50, 100, 30, 100, 100}; // Ajusta los anchos de las columnas según tus necesidades
 
                 // Ajusta el ancho de cada columna en la JTable
                 for (int i = 0; i < jTable1.getColumnCount(); i++) {
@@ -334,7 +334,7 @@ public class ListarPelis extends javax.swing.JPanel {
                 try {
                         Connection con = Conexion.getConexion();
                         ps = con.prepareStatement("SELECT  id, titulo, annio, director, genero, duracion FROM peliculas "
-                        + "WHERE'" + desde.getText() + "' < annio AND '" + hasta.getText() + "'>annio ORDER BY id ASC");
+                        + "WHERE '" + desde.getText() + "' <= annio AND '" + hasta.getText() + "'>= annio ORDER BY id ASC");
                         rs = ps.executeQuery();
                         rsmd = rs.getMetaData();
                         columnas = rsmd.getColumnCount();

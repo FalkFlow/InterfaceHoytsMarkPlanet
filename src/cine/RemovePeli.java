@@ -133,7 +133,7 @@ public class RemovePeli extends javax.swing.JPanel {
     ResultSet rs;
     ResultSetMetaData rsmd;
     int columnas;
-    int[] anchos = {30, 50, 100, 30, 100}; // Ajusta los anchos de las columnas según tus necesidades
+    int[] anchos = {30, 50, 100, 30, 100, 100}; // Ajusta los anchos de las columnas según tus necesidades
 
     // Ajusta el ancho de cada columna en la JTable
     for (int i = 0; i < jTable1.getColumnCount(); i++) {

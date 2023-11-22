@@ -34,13 +34,11 @@ public class AgregarPeli extends javax.swing.JPanel {
                 nameGroup = new javax.swing.JLabel();
                 cleanFields = new javax.swing.JButton();
                 jPanel1 = new javax.swing.JPanel();
-                idText = new javax.swing.JTextField();
                 titleText = new javax.swing.JTextField();
                 titleLabel = new javax.swing.JLabel();
                 directorLabel = new javax.swing.JLabel();
                 directorText = new javax.swing.JTextField();
                 annoLabel = new javax.swing.JLabel();
-                idLabel = new javax.swing.JLabel();
                 annoText = new javax.swing.JTextField();
                 genLabel = new javax.swing.JLabel();
                 genText = new javax.swing.JTextField();
@@ -68,8 +66,6 @@ public class AgregarPeli extends javax.swing.JPanel {
 
                 jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
-                idText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-
                 titleText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
                 titleLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -85,10 +81,6 @@ public class AgregarPeli extends javax.swing.JPanel {
                 annoLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
                 annoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
                 annoLabel.setText("Año:");
-
-                idLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-                idLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-                idLabel.setText("ID:");
 
                 annoText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
@@ -117,14 +109,12 @@ public class AgregarPeli extends javax.swing.JPanel {
                                         .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(annoLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(directorLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                        .addComponent(idLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(genLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(48, 48, 48)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(directorText, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
                                         .addComponent(annoText, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
                                         .addComponent(titleText, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-                                        .addComponent(idText, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
                                         .addComponent(genText)
                                         .addComponent(duraText))
                                 .addGap(13, 13, 13))
@@ -133,41 +123,35 @@ public class AgregarPeli extends javax.swing.JPanel {
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(4, 4, 4)
-                                                .addComponent(idLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(idText))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(4, 4, 4)
                                                 .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(titleText))
+                                        .addComponent(titleText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(4, 4, 4)
                                                 .addComponent(annoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(annoText))
+                                        .addComponent(annoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(4, 4, 4)
                                                 .addComponent(directorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(directorText))
+                                        .addComponent(directorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(4, 4, 4)
                                                 .addComponent(genLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(genText))
+                                        .addComponent(genText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(4, 4, 4)
                                                 .addComponent(direcionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(duraText))
+                                        .addComponent(duraText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(4, 4, 4))
                 );
 
@@ -202,20 +186,19 @@ public class AgregarPeli extends javax.swing.JPanel {
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(40, Short.MAX_VALUE)
+                                .addContainerGap(61, Short.MAX_VALUE)
                                 .addComponent(nameGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(cleanFields)
                                         .addComponent(Send))
-                                .addContainerGap(168, Short.MAX_VALUE))
+                                .addContainerGap(189, Short.MAX_VALUE))
                 );
         }// </editor-fold>//GEN-END:initComponents
 
     private void SendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendActionPerformed
-        String id = idText.getText();
         String title = titleText.getText();
         String anno = annoText.getText();
         String director = directorText.getText();
@@ -223,20 +206,19 @@ public class AgregarPeli extends javax.swing.JPanel {
         String duracion = duraText.getText();
         try {
             Connection con = Conexion.getConexion();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO peliculas (id, titulo, annio, director, genero, duracion) VALUES (?, ?, ?, ?, ?, ?)");
-            ps.setString(1, id);
-            ps.setString(2, title);
-            ps.setString(3, anno);
-            ps.setString(4, director);
-            ps.setString(5, gen);
-            ps.setString(6, duracion);
+            PreparedStatement ps = con.prepareStatement("INSERT INTO peliculas (titulo, annio, director, genero, duracion) VALUES (?, ?, ?, ?, ?)");
+            ps.setString(1, title);
+            ps.setString(2, anno);
+            ps.setString(3, director);
+            ps.setString(4, gen);
+            ps.setString(5, duracion);
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Película agregada correctamente");
-            idText.setText("");
             titleText.setText("");
             annoText.setText("");
             directorText.setText("");
             genText.setText("");
+            duraText.setText("");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -246,11 +228,11 @@ public class AgregarPeli extends javax.swing.JPanel {
 
     private void cleanFieldsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanFieldsActionPerformed
         // TODO add your handling code here:
-        idText.setText("");
         titleText.setText("");
         annoText.setText("");
         directorText.setText("");
         genText.setText("");
+        duraText.setText("");
     }//GEN-LAST:event_cleanFieldsActionPerformed
 
 
@@ -265,8 +247,6 @@ public class AgregarPeli extends javax.swing.JPanel {
         private javax.swing.JTextField duraText;
         private javax.swing.JLabel genLabel;
         private javax.swing.JTextField genText;
-        private javax.swing.JLabel idLabel;
-        private javax.swing.JTextField idText;
         private javax.swing.JPanel jPanel1;
         private javax.swing.JLabel nameGroup;
         private javax.swing.JLabel titleLabel;
